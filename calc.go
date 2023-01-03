@@ -13,8 +13,17 @@ type Number interface {
 func MaxBig(x, y *big.Int) *big.Int {
 	if x.Cmp(y) < 0 {
 		return y
+	} else {
+		return x
 	}
-	return x
+}
+
+func MinBig(x, y *big.Int) *big.Int {
+	if x.Cmp(y) > 0 {
+		return y
+	} else {
+		return x
+	}
 }
 
 func Max[T Number](x, y T) T {
